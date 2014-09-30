@@ -19,3 +19,39 @@ Examples:
 ExOh('xoxoox') # true
 ExOh('oooxoo') # false
 ```
+#include <iostream>
+using namespace std;
+
+bool ExOh(string str)
+{
+	int x_count=0;
+	int o_count=0;
+	unsigned int i;
+	
+	for(i = 0; i < str.length(); i++)
+	{
+		if(str[i] == 'x')
+			x_count++;
+		else if (str[i] == 'o')
+			o_count++;
+	}
+	if(x_count==o_count) 
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+int main()
+{
+	string str1 = "oxoxox";
+	string str2 = "oxooox";
+	
+	cout << ExOh(str1) << endl;
+	cout << ExOh(str2) << endl;
+	
+	return 0;
+}
